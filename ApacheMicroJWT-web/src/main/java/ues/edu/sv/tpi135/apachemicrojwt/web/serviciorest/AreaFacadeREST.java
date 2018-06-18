@@ -6,7 +6,9 @@
 package ues.edu.sv.tpi135.apachemicrojwt.web.serviciorest;
 
 import java.util.List;
+import javax.crypto.KeyGenerator;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -18,6 +20,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import ues.edu.sv.tpi135.apachemicrojwt.ejb.acceso.AbstractFacade;
 import ues.edu.sv.tpi135.apachemicrojwt.lib.entidades.Area;
 
 /**
@@ -25,8 +28,10 @@ import ues.edu.sv.tpi135.apachemicrojwt.lib.entidades.Area;
  * @author esperanza
  */
 @Stateless
-@Path("ues.edu.sv.tpi135.apachemicrojwt.lib.entidades.area")
+@Path("/area")
 public class AreaFacadeREST extends AbstractFacade<Area> {
+    @Inject
+    private KeyGenerator llave;
 
     @PersistenceContext(unitName = "mantenimientoPU")
     private EntityManager em;
@@ -37,14 +42,14 @@ public class AreaFacadeREST extends AbstractFacade<Area> {
 
     @POST
     @Override
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
     public void create(Area entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
     public void edit(@PathParam("id") Integer id, Area entity) {
         super.edit(entity);
     }
@@ -57,21 +62,21 @@ public class AreaFacadeREST extends AbstractFacade<Area> {
 
     @GET
     @Path("{id}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public Area find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public List<Area> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public List<Area> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
