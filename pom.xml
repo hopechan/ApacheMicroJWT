@@ -10,5 +10,6 @@
     <module>ApacheMicroJWT-ear</module>
     <module>ApacheMicroJWT-web</module>
     <module>ApacheMicroJWT-ejb</module>
+    <module>ApacheMicroJWT-lib</module>
   </modules>
 </project>
