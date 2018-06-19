@@ -6,7 +6,10 @@
 package ues.edu.sv.tpi135.apachemicrojwt.web.serviciorest;
 
 import java.util.List;
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -25,11 +28,12 @@ import ues.edu.sv.tpi135.apachemicrojwt.lib.entidades.Modelo;
  *
  * @author esperanza
  */
-@Stateless
+@RequestScoped
 @Path("/modelo")
 public class ModeloFacadeREST extends AbstractFacade<Modelo> {
 
     @PersistenceContext(unitName = "mantenimientoPU")
+    @Inject
     private EntityManager em;
 
     public ModeloFacadeREST() {
@@ -66,6 +70,7 @@ public class ModeloFacadeREST extends AbstractFacade<Modelo> {
     @GET
     @Override
     @Produces({MediaType.APPLICATION_JSON})
+    @RolesAllowed({"admin", "user"})
     public List<Modelo> findAll() {
         return super.findAll();
     }

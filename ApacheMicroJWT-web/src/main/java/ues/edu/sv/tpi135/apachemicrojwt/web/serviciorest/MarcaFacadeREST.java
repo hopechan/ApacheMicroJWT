@@ -6,7 +6,10 @@
 package ues.edu.sv.tpi135.apachemicrojwt.web.serviciorest;
 
 import java.util.List;
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -19,18 +22,22 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import ues.edu.sv.tpi135.apachemicrojwt.ejb.acceso.AbstractFacade;
+import ues.edu.sv.tpi135.apachemicrojwt.ejb.acceso.MarcaFacade;
 import ues.edu.sv.tpi135.apachemicrojwt.lib.entidades.Marca;
 
 /**
  *
  * @author esperanza
  */
-@Stateless
+@RequestScoped
 @Path("/marca")
 public class MarcaFacadeREST extends AbstractFacade<Marca> {
 
     @PersistenceContext(unitName = "mantenimientoPU")
     private EntityManager em;
+    
+    @Inject
+    private MarcaFacade servicioMarca;
 
     public MarcaFacadeREST() {
         super(Marca.class);
@@ -39,6 +46,7 @@ public class MarcaFacadeREST extends AbstractFacade<Marca> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_JSON})
+    @RolesAllowed({"admin", "user"})
     public void create(Marca entity) {
         super.create(entity);
     }
@@ -65,6 +73,7 @@ public class MarcaFacadeREST extends AbstractFacade<Marca> {
 
     @GET
     @Override
+    @RolesAllowed({"admin", "user"})
     @Produces({MediaType.APPLICATION_JSON})
     public List<Marca> findAll() {
         return super.findAll();
