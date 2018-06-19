@@ -29,10 +29,10 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(ues.edu.sv.tpi135.apachecmicrojwt.web.tokencontroller.JwtController.class);
         resources.add(ues.edu.sv.tpi135.apachemicrojwt.web.serviciorest.AreaFacadeREST.class);
         resources.add(ues.edu.sv.tpi135.apachemicrojwt.web.serviciorest.MarcaFacadeREST.class);
         resources.add(ues.edu.sv.tpi135.apachemicrojwt.web.serviciorest.ModeloFacadeREST.class);
+        resources.add(ues.edu.sv.tpi135.apachemicrojwt.web.tokencontroller.JwtController.class);
     }
     
 }
