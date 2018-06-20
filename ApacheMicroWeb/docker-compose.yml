@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+    paymantenimiento:
+        image: 'microserver'
+        build: ./PayaraMicro/.
+        container_name: 'payaramicro'
+        ports:
+        - "8080:8080"
+
