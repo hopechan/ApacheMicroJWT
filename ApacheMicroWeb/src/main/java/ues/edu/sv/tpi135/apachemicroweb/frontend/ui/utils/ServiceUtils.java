@@ -1,5 +1,5 @@
 
-package ues.edu.sv.apachemicroweb.frontend.ui.utils;
+package ues.edu.sv.tpi135.apachemicroweb.frontend.ui.utils;
 
 import java.io.StringReader;
 import java.net.URI;

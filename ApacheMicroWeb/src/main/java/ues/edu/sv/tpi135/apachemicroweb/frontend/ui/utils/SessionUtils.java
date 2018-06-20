@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.apachemicroweb.frontend.ui.utils;
+package ues.edu.sv.tpi135.apachemicroweb.frontend.ui.utils;
 
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;

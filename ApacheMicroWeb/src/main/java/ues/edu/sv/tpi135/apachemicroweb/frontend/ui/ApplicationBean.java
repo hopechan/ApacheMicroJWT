@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.apachemicroweb.frontend.ui;
+package ues.edu.sv.tpi135.apachemicroweb.frontend.ui;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,9 +12,9 @@ import javax.annotation.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
-import ues.edu.sv.apachemicroweb.frontend.ui.modelos.SystemModel;
-import ues.edu.sv.apachemicroweb.frontend.ui.utils.ServiceUtils;
-import ues.edu.sv.apachemicroweb.frontend.ui.utils.SessionUtils;
+import ues.edu.sv.tpi135.apachemicroweb.frontend.ui.modelos.SystemModel;
+import ues.edu.sv.tpi135.apachemicroweb.frontend.ui.utils.ServiceUtils;
+import ues.edu.sv.tpi135.apachemicroweb.frontend.ui.utils.SessionUtils;
 
 /**
  *

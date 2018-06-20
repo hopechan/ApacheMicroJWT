@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.apachemicroweb.frontend.ui;
+package ues.edu.sv.tpi135.apachemicroweb.frontend.ui;
 
+import com.ibm.websphere.security.jwt.Claims;
+import com.ibm.websphere.security.jwt.JwtBuilder;
 import java.util.HashSet;
 import java.util.Set;
 import javax.annotation.ManagedBean;
@@ -12,9 +14,7 @@ import javax.faces.bean.ViewScoped;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import org.eclipse.microprofile.jwt.Claims;
-import com.ibm.websphere.security.jwt.*;
-import ues.edu.sv.apachemicroweb.frontend.ui.utils.SessionUtils;
+import ues.edu.sv.tpi135.apachemicroweb.frontend.ui.utils.SessionUtils;
 
 /**
  *
